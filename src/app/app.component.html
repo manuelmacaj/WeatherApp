@@ -3,13 +3,18 @@
 </mat-toolbar>
 <div class="content">
     <div class="cardLayout">
-        <mat-form-field appearance="standard">
-            <mat-select placeholder="Seleziona città" [formControl]="citySelected">
+        <mat-form-field appearance="outline">
+            <!-- <mat-select placeholder="Seleziona città" [formControl]="citySelected">
                 <mat-option *ngFor="let city of cities" [value]="city">
                     {{city}}
                 </mat-option>
-            </mat-select>
+            </mat-select> -->
+            <mat-label>Inserisci la città</mat-label>
+            <input matInput [formControl]="citySelected">
         </mat-form-field>
+        <button mat-fab color="warm" (click)="searchCity()">
+            <mat-icon>search</mat-icon>
+        </button>
     </div>
     <router-outlet></router-outlet>
 </div>

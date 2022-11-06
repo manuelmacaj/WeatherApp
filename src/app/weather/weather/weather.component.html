@@ -1,12 +1,11 @@
-<p>Funziona</p>
-
-<button (click)="getForcast()">cliccami</button>
-
 <mat-card *ngIf="datiRicevuti | async as data">
     <mat-card-header>
         <mat-card-title>
             {{data.name}}
         </mat-card-title>
+        <mat-card-subtitle>
+            {{today | date}}
+        </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
         <span>{{data.main.temp}} °C</span>

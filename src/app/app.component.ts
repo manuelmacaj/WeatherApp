@@ -16,8 +16,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.citySelected.valueChanges.subscribe(value => {
-      this.router.navigate([value])
-    })
+  }
+
+  protected searchCity() {
+    console.log("Bottone cliccato");
+    this.router.navigate([this.citySelected.value])
   }
 }
