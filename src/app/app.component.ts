@@ -25,5 +25,6 @@ export class AppComponent implements OnInit {
   protected searchCity() {
     console.log("Bottone cliccato");
     this.router.navigate([this.citySelected.value])
+    this.citySelected.reset("");
   }
 }

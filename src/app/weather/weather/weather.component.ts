@@ -14,7 +14,8 @@ export class WeatherComponent implements OnInit {
   datiRicevuti: Observable<any> | undefined;
   today = Date.now();
   
-  constructor(private router: ActivatedRoute, private weatherService: WeatherService) {
+  constructor(private router: ActivatedRoute, private weatherService: WeatherService, 
+    private route: Router) {
   }
 
   ngOnInit(): void {
@@ -23,17 +24,9 @@ export class WeatherComponent implements OnInit {
       filter(name => !!name),
       concatMap(name => this.weatherService.getData(name))
     )
+    this.datiRicevuti.subscribe({
+      error: _ => this.route.navigate(["/"])
+    })
     console.log(this.datiRicevuti);
   }
-
-  getForcast() {
-    console.log("Bottone get forecast funziona")
-    // let citySelected = this.router.snapshot.paramMap.get("locationSelected")
-    // this.datiRicevuti = this.router.params.pipe(
-    //   map(params => params["locationSelected"]),
-    //   filter(name => !!name),
-    //   concatMap(name => this.weatherService.getData(name))
-    // )
-  }
-
 }

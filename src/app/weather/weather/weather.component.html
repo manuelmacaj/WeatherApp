@@ -4,16 +4,17 @@
             Meteo di: {{data.name}}
         </mat-card-title>
         <mat-card-subtitle>
-            {{today | date}}
+            {{today | date: "medium"}}
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="gridLayout">
-        <span>{{data.main.temp}} °C</span>
-        <span>Feels like</span>
-        <span>{{data.main.feels_like}} °C</span>
-        <div>
-            <span>{{data.weather[0].description | titlecase}}</span>
+        <span class="temp">{{data.main.temp}}°C</span>
+        <div class="description">
+            <p>{{data.weather[0].description | titlecase}}</p>
         </div>
+        <span class="maxTemp">Max: {{data.main.temp_max}}°C</span>
+        <span class="humidity">Umidità: {{data.main.humidity}}%</span>
+        <span class="minTemp">Min: {{data.main.temp_min}} °C</span>
         <br>
     </mat-card-content>
 </mat-card>

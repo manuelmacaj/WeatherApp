@@ -1,4 +1,37 @@
 mat-card {
     margin: 50px auto;
-    width: 50%;
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+
+.temp {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: x-large;
+
+}
+
+.description {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.maxTemp {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.minTemp {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.humidity {
+    grid-column: 2;
+    grid-row: 3;
 }
