@@ -1,11 +1,26 @@
+.content {
+    margin: 10px 10px 10px 10px;
+    display: block;
+    padding: 5px;
+}
+
 .cardLayout {
-    margin: 1rem;
-    width: 30%;
+    text-align: center;
     padding: 10px;
     box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.479);
     border-radius: 24px;
 }
 
-.content {
-    margin: 50px auto;
+.items {
+    padding-top: 18.813px;
+    display: inline-block;
+}
+
+.inputField {
+    padding-right: 5px;
+}
+
+.weather {
+    display: inline-block;
+    width: 100%;
 }

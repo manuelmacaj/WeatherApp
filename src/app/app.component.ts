@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'WeatherApp';
   cities = ["Milan", "London", "Rome", "Madrid"];
-  citySelected = new FormControl("");
+  citySelected = new FormControl("", [Validators.required]);
 
-  constructor(private router: Router) { 
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+  }
+
+  getFieldError() {
+    return "Il campo è obbligatorio, completalo!" || ""
   }
 
   protected searchCity() {

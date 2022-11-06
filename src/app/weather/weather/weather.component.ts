@@ -23,6 +23,7 @@ export class WeatherComponent implements OnInit {
       filter(name => !!name),
       concatMap(name => this.weatherService.getData(name))
     )
+    console.log(this.datiRicevuti);
   }
 
   getForcast() {
