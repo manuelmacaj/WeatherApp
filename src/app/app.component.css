@@ -1,7 +1,7 @@
 .content {
-    margin: 10px 10px 10px 10px;
+    margin: 10px auto;
     display: block;
-    padding: 5px;
+    padding: 10px;
 }
 
 .cardLayout {
@@ -19,9 +19,22 @@
 
 .inputField {
     padding-right: 5px;
+    font-size: 16px;
 }
 
 .weather {
     margin: 0 auto;
     width: 30em;
+}
+
+@media only screen and (max-width: 700px) {
+    .weather {
+        width: 100%;
+    }
+    .cardLayout {
+        width: 20em;
+    }
+    mat-toolbar{
+        font-size: 16px;
+    }
 }
