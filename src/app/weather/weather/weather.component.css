@@ -35,3 +35,7 @@ mat-card {
     grid-column: 2;
     grid-row: 3;
 }
+.wind {
+    grid-column: 1;
+    grid-row: 4;
+}
