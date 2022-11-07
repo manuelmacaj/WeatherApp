@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This app allows you to discover the current weather.
 I used [OpenWeather.com API](https://openweathermap.org/) to take information.
+
 To test my app: https://manuelmacaj.github.io/WeatherApp/.
 
 Digit the city and tap/click the search button. After 
