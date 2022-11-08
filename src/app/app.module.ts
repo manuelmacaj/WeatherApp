@@ -8,11 +8,13 @@ import { MaterialModule } from './materials/materials.module';
 import { WeatherComponent } from './weather/weather/weather.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SerachCityComponent } from './weather/serach-city/serach-city.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent
+    WeatherComponent,
+    SerachCityComponent
   ],
   imports: [
     BrowserModule,

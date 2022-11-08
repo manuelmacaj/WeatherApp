@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { concatMap, filter, map, Observable } from 'rxjs';
 import { WeatherService } from '../weather.service';
@@ -11,7 +11,6 @@ import { WeatherService } from '../weather.service';
 export class WeatherComponent implements OnInit {
   city: String = "";
   datiRicevuti: Observable<any> | undefined;
-  today = Date.now();
   
   constructor(private router: ActivatedRoute, private weatherService: WeatherService, 
     private route: Router) {
@@ -27,4 +26,5 @@ export class WeatherComponent implements OnInit {
       error: _ => this.route.navigate(["/"])
     })
   }
+  
 }

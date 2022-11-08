@@ -1,0 +1,40 @@
+.content {
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+}
+
+.cardLayout {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.479);
+    border-radius: 24px;
+    width: 30em;
+}
+
+.items {
+    padding-top: 18.813px;
+}
+
+.inputField {
+    padding-right: 5px;
+    font-size: 16px;
+}
+
+.weather {
+    margin: 0 auto;
+    width: 30em;
+}
+
+@media only screen and (max-width: 700px) {
+    .weather {
+        width: 100%;
+    }
+    .cardLayout {
+        width: 20em;
+    }
+    mat-toolbar{
+        font-size: 16px;
+    }
+}

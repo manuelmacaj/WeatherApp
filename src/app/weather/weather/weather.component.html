@@ -4,7 +4,8 @@
             Meteo di: {{data.name}}
         </mat-card-title>
         <mat-card-subtitle>
-            {{today | date: "medium"}}
+            {{data.dt*1000 | date: "dd/M/YYYY, H:mm"}}
+            <!-- conversione da unix timestamp in Date-->
         </mat-card-subtitle>
     </mat-card-header>
     <mat-card-content class="gridLayout">
@@ -14,5 +15,7 @@
         <span class="humidity">Umidità: {{data.main.humidity}}%</span>
         <span class="minTemp">Min: {{data.main.temp_min | number: "1.0-0"}}°C</span>
         <span class="wind">Vento: {{data.wind.speed}}Km</span>
+        <span class="sunrise">Alba: {{data.sys.sunrise*1000 | date: "H:mm"}}</span>
+        <span class="sunset">Tramonto: {{data.sys.sunset*1000 | date: "H:mm" }}</span>
     </mat-card-content>
 </mat-card>
