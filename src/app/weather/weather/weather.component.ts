@@ -1,6 +1,7 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { concatMap, filter, map, Observable } from 'rxjs';
+import { RootObject } from 'src/app/interfaces/interface';
 import { WeatherService } from '../weather.service';
 
 @Component({
