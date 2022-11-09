@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, filter, map, Observable } from 'rxjs';
-import { RootObject } from 'src/app/interfaces/interface';
+import { concatMap, delay, filter, map, Observable, tap } from 'rxjs';
 import { WeatherService } from '../weather.service';
 
 @Component({
@@ -12,8 +11,9 @@ import { WeatherService } from '../weather.service';
 export class WeatherComponent implements OnInit {
   city: String = "";
   datiRicevuti: Observable<any> | undefined;
-  
-  constructor(private router: ActivatedRoute, private weatherService: WeatherService, 
+  isLoading = false;
+
+  constructor(private router: ActivatedRoute, private weatherService: WeatherService,
     private route: Router) {
   }
 
@@ -21,11 +21,14 @@ export class WeatherComponent implements OnInit {
     this.datiRicevuti = this.router.params.pipe(
       map(params => params["locationSelected"]),
       filter(name => !!name),
-      concatMap(name => this.weatherService.getData(name))
+      tap(() => this.isLoading = true),
+      concatMap(name => this.weatherService.getData(name)),
+      delay(1000),
+      tap(() => this.isLoading = false)
     )
     this.datiRicevuti.subscribe({
       error: _ => this.route.navigate(["/"])
     })
   }
-  
+
 }

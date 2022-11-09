@@ -1,4 +1,5 @@
 <mat-card *ngIf="datiRicevuti | async as data">
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
     <mat-card-header>
         <mat-card-title>
             Meteo di: {{data.name}}
