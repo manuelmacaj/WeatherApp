@@ -1,19 +1,19 @@
-export interface Coord {
-    lon: number;
-    lat: number;
+export interface Coord { // interfaccia coordinate
+    lon: number; 
+    lat: number; 
 }
 
 export interface Weather {
     id: number;
     main: string;
-    description: string;
-    icon: string;
+    description: string; 
+    icon: string; 
 }
 
-export interface Main {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
+export interface Main { // interfaccia main
+    temp: number; 
+    feels_like: number; 
+    temp_min: number; 
     temp_max: number;
     pressure: number;
     humidity: number;
@@ -21,21 +21,21 @@ export interface Main {
     grnd_level: number;
 }
 
-export interface Wind {
+export interface Wind { // interfaccia vento
     speed: number;
     deg: number;
     gust: number;
 }
 
-export interface Rain {
+export interface Rain { // interfaccia pioggia
     h: number;
 }
 
-export interface Clouds {
+export interface Clouds { // interfaccia nuvole
     all: number;
 }
 
-export interface Sys {
+export interface Sys { // interfaccia sistema
     type: number;
     id: number;
     country: string;
@@ -43,7 +43,7 @@ export interface Sys {
     sunset: number;
 }
 
-export interface RootObject {
+export interface RootObject { // interfaccia che racchiude tutte le interfacce
     coord: Coord;
     weather: Weather[];
     base: string;

@@ -14,11 +14,14 @@ What you will see on the weather card:
 - City
 - Date and hour of your request
 - Current temperature
+- Icon associated with the weather
 - Little description
 - Max temperature
 - Humidity
 - Min temperature
 - Wind speed
+- Sunrise
+- Sunset
 
 ## Small considerations
 - The input field is required
