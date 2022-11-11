@@ -17,7 +17,7 @@
         <span class="humidity">Umidità: {{data.main.humidity}}%</span>
         <span class="minTemp">Min: {{data.main.temp_min | number: "1.0-0"}}°C</span>
         <span class="wind">Vento: {{data.wind.speed}}Km</span>
-        <span class="sunrise">Alba: {{data.sys.sunrise*1000 | date: "H:mm"}}</span>
-        <span class="sunset">Tramonto: {{data.sys.sunset*1000 | date: "H:mm" }}</span>
+        <span class="sunrise">Alba: {{(data.sys.sunrise + data.timezone)*1000 | date: "H:mm"}}</span>
+        <span class="sunset">Tramonto: {{(data.sys.sunset + data.timezone)*1000 | date: "H:mm" }}</span>
     </mat-card-content>
 </mat-card>
